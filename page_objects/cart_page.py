@@ -40,11 +40,11 @@ class CartPage(BaseCase):
     empty_cart_button =" .//button[text()='SEE RESTAURANTS NEAR YOU']"
 
     # Delivery Address
-    home_address = ".//h2[text()='Home']"
+    home_address = ".//button[text()='DELIVER HERE']"
     work_address = ".//h2[text()='Work']"
 
     #Payment Method
-    payment_method_online = ".//h2[text()='Pay Online']"
+    payment_method_online = ".//button[text()='CHOOSE PAYMENT']"
     payment_method_offline = ".//h2[text()='Pay Offline']"
     proceed_payment_button = ".//button[text()='PROCEED TO PAYMENT']"
 
@@ -71,6 +71,7 @@ class CartPage(BaseCase):
         self.click(self.home_address)
         self.wait(3)
         self.click(self.payment_method_online)
+        self.wait(2)
 
 
         
