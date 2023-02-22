@@ -10,6 +10,8 @@ class HomePage(BaseCase):
     footer = ".text-red"
     login_button = "//*[@class='nav--btn' and contains(., 'Login')]"
     logout_button = "//*[@class='nav--btn' and contains(., 'Logout')]"
+    favourtes_button = ".btn--secondary"
+    favourtes_click = ".absolute span"
    
     
 
@@ -66,7 +68,8 @@ class HomePage(BaseCase):
 
         # Verify that the form field value is empty
         assert form_field.get_attribute("value") == ""
-        self.wait(4)    
+        self.wait(4)
+
 
 
 
