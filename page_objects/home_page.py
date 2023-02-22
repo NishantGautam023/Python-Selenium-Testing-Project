@@ -40,18 +40,28 @@ class HomePage(BaseCase):
         self.open(self.page_url)
 
     def login(self):
-        self.open(self.page_url);
-        self.wait(3)
-        self.find_element(self.login_button).click()
-        self.wait(1);
+        
+        
+        self.wait_for_element(self.login_button).click()
+        
         # fill the form
         self.send_keys(self.email_button, self.user_name)
+        print(f"The user have entered {self.user_name}")
         self.send_keys(self.password_button, self.user_password);
+        print(f"The user entered password as {self.user_password[0:3]}****")
+
+
         # click the signIn button
         self.click(self.signIn_button)
         # Verify the user Email has been displayed
         self.assert_text("Hello sippy@gmail.com !!!", ".text-green");
+        print(f"The user is LoggedIn and status is Online")
         self.wait(3);
+        # Click on Logout
+        self.slow_click(self.logout_button);
+        self.wait_for_element(self.login_button).click()
+        self.wait(2)
+
 
     def register(self):
         self.click(self.login_button);
