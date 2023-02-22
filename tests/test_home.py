@@ -31,6 +31,15 @@ class HomePageTest(HomePage):
 
         # scroll to buttom
         self.slow_scroll_to(".text-red", by="css selector")
+        self.click(self.help_page)
+
+        # Goto the Help Page
+        self.slow_click(self.help_page)
+        expected_heading = 'FAQ'
+        returned_heading = self.get_element(self.heading_help_page)
+        self.assertEqual(expected_heading, returned_heading.text)
+        print(f"The Headiing Matches where {expected_heading} and {returned_heading.text} are same")
+        self.click_visible_elements(self.accordin);
         
 
     def test_header_links(self):

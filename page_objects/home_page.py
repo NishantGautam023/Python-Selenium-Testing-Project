@@ -12,6 +12,7 @@ class HomePage(BaseCase):
     logout_button = "//*[@class='nav--btn' and contains(., 'Logout')]"
     favourtes_button = ".btn--secondary"
     favourtes_click = ".absolute span"
+    
    
     
 
@@ -27,6 +28,12 @@ class HomePage(BaseCase):
     signUp_anchor = ".text-red"
     signUp_button = "button[type='submit']"
     error_message = ".error-text"
+
+    #Help Page Section
+    heading_help_page= ".card-container-title"
+    help_page = "//*[@class='nav--btn' and contains(., 'Help')]"
+    accordin = ".cursor-pointer"
+
 
 
     def open_page(self):
