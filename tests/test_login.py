@@ -1,4 +1,4 @@
-from seleniumbase import BaseCase
+
 from page_objects.home_page import HomePage
 
 
@@ -12,7 +12,7 @@ class LoginTest(HomePage):
         self.open("https://dishdelish.netlify.app/")
 
         # Login
-        self.login();
+        # self.login();
 
 
 
@@ -20,8 +20,9 @@ class LoginTest(HomePage):
         print("Running after Each test")
         # Logout
         self.wait(2)
-        self.find_element("//*[@class='nav--btn' and contains(., 'Logout')]").click()
+        self.click(self.logout_button)
          # Verify the Please Login !!! been displayed
+        self.wait(3)
         self.assert_text("Please Login !!!", ".text-green"); 
 
 
@@ -34,11 +35,13 @@ class LoginTest(HomePage):
     def test_login_page(self):
         
         # open page
-        print("Hello")
+        print("Hello, User has logged iN and logged Out")
         
        
+    def test_registration_page(self):
+        self.register();
 
-        # fill the form
+
    
 
         

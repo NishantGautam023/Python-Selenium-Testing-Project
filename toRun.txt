@@ -1,0 +1,3 @@
+To Generate DashBoard Reports; ---> pytest --DashBoard
+
+To Generate HTML Report --> pytest --html=report.html

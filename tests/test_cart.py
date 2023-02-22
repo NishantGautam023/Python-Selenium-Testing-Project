@@ -12,7 +12,7 @@ class CartPageTest(CartPage):
     
     # Add to Cart without logged In and using the SearchBar 
     def test_add_to_cart_NotLoggedIn(self):
-        self.click(self.search_text);
+        self.slow_click(self.search_text);
         self.wait(3);
         
         # Check the Image is displayed with the message when the cart is empty

@@ -5,13 +5,14 @@ class CartPage(BaseCase):
     error_message = "#error-message"
     search_button = ".btn--primary"
     nav_links = ".nav--btn"
-    search_text = ".//h6[text()='Chinese Panda']"  
+    search_text = ".//h6[text()='Asha tiffins']"  # This might change due to Dynamic API
   
-    search_using_menu = ".//h6[text()='Shapana dhaba']"
+    search_using_menu = ".//h6[text()='Namaste']" # This mighr change due to Dynmaic API
     food_item =".tracking-normal"
     search_box = ".outline-none"
     make_favourite = "❤"
     login_button = "//*[@class='nav--btn' and contains(., 'Login')]"
+    logout_button = "//*[@class='nav--btn' and contains(., 'Logout')]"
    
    # Login Section
     signIn_button = ".inline-block"

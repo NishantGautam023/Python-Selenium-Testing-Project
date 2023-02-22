@@ -21,7 +21,12 @@ class HomePageTest(HomePage):
     def test_home_page(self):
 
         # open Home page
-        self.open_page()  # 
+        self.open_page()
+        # Get the cookies
+        cookies = self.driver.get_cookies()
+        
+        # Print the cookies
+        print(cookies) 
 
 
 

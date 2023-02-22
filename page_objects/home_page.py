@@ -9,6 +9,8 @@ class HomePage(BaseCase):
     page_title ="DishDelish Food Version 6.0"
     footer = ".text-red"
     login_button = "//*[@class='nav--btn' and contains(., 'Login')]"
+    logout_button = "//*[@class='nav--btn' and contains(., 'Logout')]"
+   
     
 
 
@@ -20,6 +22,9 @@ class HomePage(BaseCase):
     password_button = "input[type='password']"
     user_name = "sippy@gmail.com"
     user_password = "123456"
+    signUp_anchor = ".text-red"
+    signUp_button = "button[type='submit']"
+    error_message = ".error-text"
 
 
     def open_page(self):
@@ -38,6 +43,34 @@ class HomePage(BaseCase):
         # Verify the user Email has been displayed
         self.assert_text("Hello sippy@gmail.com !!!", ".text-green");
         self.wait(3);
+
+    def register(self):
+        self.click(self.login_button);
+        self.wait(2);
+        self.click(self.signUp_anchor);
+
+        # If already Registered users tries to re-register Again
+
+        self.send_keys(self.email_button, self.user_name)
+        self.send_keys(self.password_button, self.user_password);
+        self.click(self.signUp_button);
+        self.wait_for_element_present(self.error_message)
+        self.assert_text("Firebase: Error (auth/email-already-in-use).", self.error_message)
+        self.wait(3)
+
+        # If it is a New User but gives password less than 6 characters.
+        
+        # Find the form field element and clear its value
+        form_field = self.find_element(self.email_button)
+        form_field.clear()
+
+        # Verify that the form field value is empty
+        assert form_field.get_attribute("value") == ""
+        self.wait(4)    
+
+
+
+
 
 
 
