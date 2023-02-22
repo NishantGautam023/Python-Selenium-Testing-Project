@@ -1,0 +1,26 @@
+tests/test_cart.py::CartPageTest::test_add_to_cart_LoggedIn
+--------------------------------------------------------------------
+Last Page: https://dishdelish.netlify.app/
+ Duration: 20.62s
+  Browser: Chrome 110.0.5481.100 / headless
+   Driver: chromedriver 110.0.5481.77
+Timestamp: 1677104646  (Unix Timestamp)
+     Date: Wednesday, February 22, 2023
+     Time: 5:24:06 PM  (EDT, UTC-05:00)
+--------------------------------------------------------------------
+Traceback: File "/Users/nishant/opt/anaconda3/lib/python3.9/unittest/case.py", line 592, in run
+    self._callTestMethod(testMethod)
+  File "/Users/nishant/opt/anaconda3/lib/python3.9/unittest/case.py", line 550, in _callTestMethod
+    method()
+  File "/Users/nishant/Desktop/Python_Projects/Selenium/tests/test_cart.py", line 54, in test_add_to_cart_LoggedIn
+    self.UserLoggedIn();
+  File "/Users/nishant/Desktop/Python_Projects/Selenium/page_objects/cart_page.py", line 53, in UserLoggedIn
+    self.click(self.search_using_menu);
+  File "/Users/nishant/opt/anaconda3/lib/python3.9/site-packages/seleniumbase/fixtures/base_case.py", line 360, in click
+    element = page_actions.wait_for_element_visible(
+  File "/Users/nishant/opt/anaconda3/lib/python3.9/site-packages/seleniumbase/fixtures/page_actions.py", line 465, in wait_for_element_visible
+    timeout_exception(NoSuchElementException, message)
+  File "/Users/nishant/opt/anaconda3/lib/python3.9/site-packages/seleniumbase/fixtures/page_actions.py", line 228, in timeout_exception
+    raise exc(msg)
+Exception: Message: 
+ Element {.//h6[text()='Namaste']} was not present after 7 seconds!
