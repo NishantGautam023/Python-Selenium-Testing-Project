@@ -68,7 +68,8 @@ class HomePage(BaseCase):
         self.wait(2);
         self.click(self.signUp_anchor);
 
-        # If already Registered users tries to re-register Again
+
+ # Case 1:  Already Registered
 
         self.send_keys(self.email_button, self.user_name)
         self.send_keys(self.password_button, self.user_password);
@@ -77,15 +78,81 @@ class HomePage(BaseCase):
         self.assert_text("Firebase: Error (auth/email-already-in-use).", self.error_message)
         self.wait(3)
 
-        # If it is a New User but gives password less than 6 characters.
+
+ # Case 2:  Invalid Password
         
         # Find the form field element and clear its value
         form_field = self.find_element(self.email_button)
         form_field.clear()
+        password_field = self.find_element(self.password_button)
+        password_field.clear()
 
         # Verify that the form field value is empty
         assert form_field.get_attribute("value") == ""
         self.wait(4)
+
+        
+        self.send_keys(self.email_button, "1234@gmail.com")
+        self.send_keys(self.password_button, "1234")
+        self.click(self.signUp_button);
+        self.wait_for_element(self.error_message);
+        self.wait(4);
+
+
+# Case 3: Missing Fields
+        form_field = self.find_element(self.email_button)
+        form_field.clear()
+        password_field = self.find_element(self.password_button)
+        password_field.clear()
+
+        # Verify that the form field value is empty
+        assert form_field.get_attribute("value") == ""
+        self.wait(2)
+
+        self.send_keys(self.email_button, "")
+        self.send_keys(self.password_button, "")
+        self.click(self.signUp_button);
+        self.wait_for_element(self.error_message);
+        self.wait(4);
+
+
+
+# Case 4: Invalid EmailAddress
+        form_field = self.find_element(self.email_button)
+        form_field.clear()
+        password_field = self.find_element(self.password_button)
+        password_field.clear()
+
+        # Verify that the form field value is empty
+        assert form_field.get_attribute("value") == ""
+        self.wait(2)
+
+        self.send_keys(self.email_button, "123")
+        self.send_keys(self.password_button, "45678899")
+        self.click(self.signUp_button);
+        self.wait_for_element(self.error_message);
+        self.wait(4);
+
+# Case 5: Vallid EmailAddress --Give a unique Email and password when using
+        form_field = self.find_element(self.email_button)
+        form_field.clear()
+        password_field = self.find_element(self.password_button)
+        password_field.clear()
+
+        # Verify that the form field value is empty
+        assert form_field.get_attribute("value") == ""
+        self.wait(2)
+
+        self.send_keys(self.email_button, "Valid@gmail.com")
+        self.send_keys(self.password_button, "45678899")
+        self.click(self.signUp_button);
+        self.wait_for_element(self.error_message);
+        self.wait(4);
+
+
+
+        
+
 
 
 
