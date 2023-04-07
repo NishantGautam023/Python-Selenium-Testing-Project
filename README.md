@@ -4,6 +4,31 @@
 
 A project designed to automate web application testing using Python and Selenium.
 
+## Installation
+
+Go to the Directory where requirements.txt is located
+
+```bash
+   source .venv/bin/activate  
+   pip install -r requirements.txt
+```
+    
+## Running Tests
+
+To run all the  tests, run the following command
+
+```bash
+  pytest
+
+```
+
+To run all specific  tests, run the following command
+
+```bash
+  pytest -k "test_login" -s   
+
+```
+
 <img width="853" alt="image" src="https://user-images.githubusercontent.com/47427428/230519118-3225f14a-7a6d-465e-b3c8-fcad781264d9.png">
 
 <img width="818" alt="image" src="https://user-images.githubusercontent.com/47427428/230519202-5617d0ea-f371-4633-aa1f-02d0b8636f83.png">
@@ -16,3 +41,4 @@ A project designed to automate web application testing using Python and Selenium
 
 
 ![Sample Login Logout](Project_GIF.gif)
+<b>This is the section for checking Login Logout functionality
