@@ -1,4 +1,7 @@
 # Python-Selenium-Testing-Project
+
+
+
 A project designed to automate web application testing using Python and Selenium.
 
 <img width="853" alt="image" src="https://user-images.githubusercontent.com/47427428/230519118-3225f14a-7a6d-465e-b3c8-fcad781264d9.png">
@@ -10,3 +13,6 @@ A project designed to automate web application testing using Python and Selenium
 
 <img width="636" alt="image" src="https://user-images.githubusercontent.com/47427428/230519340-a48aa5f6-9b89-4e8e-9d34-3fea17098ad4.png">
 <img width="568" alt="image" src="https://user-images.githubusercontent.com/47427428/230519359-1ff16a86-c9f9-4c64-9ac9-3fd970f85b20.png">
+
+
+![Sample Login Logout](Project_GIF.gif)
